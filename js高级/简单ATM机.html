@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+  </head>
+
+  <body>
+    <script>
+      let money = 1000
+      while (true) {
+        let main = +prompt(`
+      请您选择操作：
+      1.查询
+      2.存钱
+      3.取钱
+      4.退出
+      `)
+        if (main == 4) {
+          break
+        }
+        switch (main) {
+          case 1:
+            alert(`余额还剩${money}`)
+            break
+          case 2:
+            let cun = +prompt(`输入存款金额`)
+            money += cun
+            alert(`还剩${money}`)
+            break
+          case 3:
+            let qu = +prompt(`输入取款金额`)
+            money += qu
+            alert(`还剩${money}`)
+            break
+        }
+      }
+    </script>
+  </body>
+
+</html>

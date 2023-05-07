@@ -1,0 +1,150 @@
+@media screen and (min-width:1280px) {
+  .container {
+    width: 1280px;
+  }
+}
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color: #ccc;
+}
+.container{
+  background-color: #fff;
+}
+a{
+  color: #666;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+header{
+  padding-left: 0!important;
+}
+.logo{
+  background-color: #429ad9;
+}
+.logo img{
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.logo span{
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+.nav{
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+}
+@media screen and (max-width:992px){
+  .nav ul li{
+    float: left;
+    width: 20%;
+  }
+  article{
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width:768px){
+  .nav ul li a{
+    font-size: 12px;
+    padding-left: 0;
+  }
+  .new ul li:nth-child(1){
+    width: 100%!important;
+  }
+  .new ul li{
+    width: 50%!important;
+  }
+}
+.nav ul li a{
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 30px;
+}
+.nav ul li a:hover{
+  background-color: #fff;
+  color: #333;
+}
+.nav ul li a::before{
+  vertical-align: middle;
+  padding-right: 5px;
+}
+.new ul li{
+  float: left;
+  width: 25%;
+  height: 128px;
+  padding-right: 10px;
+}
+.new ul li img{
+  width: 100%; 
+  height: 100%; 
+}
+.new ul li:nth-child(1){
+  width: 50%;
+  height: 266px;
+  
+}
+.new ul li:nth-child(1) img{
+  width: 100%; 
+  height: 100%; 
+}
+.new ul li:nth-child(1) p{
+  font-size: 20px;
+  line-height: 41px;
+  padding: 0 10px;
+}
+.new ul li a{
+  position: relative;
+  display: block;
+  width: 100%; 
+  height: 100%; 
+}
+.new ul li p{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 41px;
+  background: rgba(0,0,0,0.5);
+  margin: 0;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 12px;
+}
+.new ul li:nth-child(2),.new ul li:nth-child(3){
+  margin-bottom: 10px;
+}
+.news{
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+  
+}
+.news .row{
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+.news .row img{
+  width: 100%;
+}
+.bin img{
+  width: 100%;
+}
+.hot{
+  display: block;
+  border: #ccc 1px solid;
+  margin-top: 20px;
+  padding: 0 20px 20px;
+}
+.hot span{
+  border-radius: 0;
+}

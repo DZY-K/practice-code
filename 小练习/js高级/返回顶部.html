@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        height: 2000px;
+      }
+
+      .head {
+        width: 100%;
+        height: 200px;
+        background-color: aqua;
+
+      }
+
+      .main {
+        width: 100%;
+        height: 300px;
+        background-color: #000;
+        margin: 30px 0;
+      }
+
+      .footer {
+        width: 100%;
+        height: 400px;
+        background-color: red;
+      }
+
+      .box {
+        display: none;
+        position: fixed;
+        top: 300px;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        background-color: brown;
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="head"></div>
+    <div class="main"></div>
+    <div class="footer"></div>
+    <div class="box">顶部</div>
+    <script>
+      var box = document.querySelector('.box')
+      var main = document.querySelector('.main')
+      var bw = box.offsetTop - main.offsetTop
+      document.addEventListener('scroll', function () {
+        
+        if (window.pageYOffset >= 200) {
+          // box.style.position = 'fixed'
+          box.style.display = 'block'
+          // box.style.top=bw+'px'
+        } else {
+          // box.style.position = 'absolute'
+          // box.style.top='300px'
+          box.style.display = 'none'
+          // }
+        }
+        box.addEventListener('click', function () {
+          animate(box, 0)
+
+        })
+      })
+
+      function animate(obj, target, callback) {
+        // 多次调用先清除定时器，只保留一个定时器。
+        clearInterval(obj.timer)
+        obj.timer = setInterval(function () {
+          var step = (target - window.pageYOffset) / 10
+          // 当盒子步长小于零步长往上取整，反之往下
+          stp = step > 0 ? Math.ceil(step) : Math.floor(step)
+          if (window.pageYOffset == target) {
+            clearInterval(obj.timer)
+            if (callback) {
+              callback()
+            }
+          } else {
+            window.scroll(0,window.pageYOffset + stp ) 
+          }
+        }, 15)
+      }
+    </script>
+  </body>
+
+</html>

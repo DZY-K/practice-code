@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        margin-top: 100px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+    <button>点击</button>
+    <script>
+      // 简单动画函数封装
+      function animate(obj, target) {
+        // 多次调用先清除定时器，只保留一个定时器。
+        clearInterval(obj.timer)
+        obj.timer = setInterval(function () {
+          if (obj.offsetLeft == target) {
+            clearInterval(obj.timer)
+          } else {
+            obj.style.left = obj.offsetLeft+6+'px'
+              
+          }
+
+        }, 30)
+      }
+      var div = document.querySelector('div')
+      var btn = document.querySelector('button')
+      btn.addEventListener('click', function () {
+        animate(div, 300)
+      })
+    </script>
+  </body>
+
+</html>

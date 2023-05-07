@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div></div>
+    <script>
+     
+      function getTimer() {
+        const timer1 = +new Date()
+        // console.log(timer1);
+        const timer2 = +new Date('2023-4-9 18:00:00')
+        // console.log(timer2);
+
+        // 毫秒数需转换成秒数
+        let timer = (timer2-timer1)/1000
+        // let d = parseInt(timer / 60 / 60 / 24)
+        let h = parseInt(timer / 60 / 60 % 24)
+        h = h < 10 ? '0' + h : h 
+        let m = parseInt(timer / 60 % 60)
+        m = m < 10 ? '0' + m : m 
+        let s = parseInt(timer % 60)
+        s = s < 10 ? '0' + s : s 
+        document.querySelector('div').innerHTML = ` ${h}:${m}:${s}`
+      }
+      // document.querySelector('div').innerHTML=getTimer(timer2,timer1)
+      getTimer()
+      setInterval(getTimer, 1000)
+    </script>
+  </body>
+
+</html>

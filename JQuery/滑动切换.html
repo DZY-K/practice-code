@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: bisque;
+      /* display: none; */
+    }
+  </style>
+  <script src="./js/jquery.js"></script>
+</head>
+<body>
+  <button>上拉滑动</button>
+  <button>下拉滑动</button>
+  <div></div>
+  <script>
+    $(function(){
+      $("button").eq(0).click(function(){
+        $("div").slideUp()
+      })
+      $("button").eq(1).click(function(){
+  $("div").slideDown(150)
+      })
+    })
+  </script>
+</body>
+</html>

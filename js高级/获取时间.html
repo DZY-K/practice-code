@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div></div>
+    <script>
+      document.querySelector('div').innerHTML = Timer()
+      function Timer() {
+        let date = new Date()
+        let Y = date.getFullYear()
+        let M = date.getMonth() + 1
+        let d = date.getDate()
+        let h = date.getHours()
+        let m = date.getMinutes()
+        let s = date.getSeconds()
+        let x=date.getDay()
+        const arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六',]
+        h = h > 10 ? h : '0' + h
+        m = m > 10 ? m : '0' + m
+        s = s > 10 ? s : '0' + s
+        return `${Y}-${M}-${d} ${h}:${m}:${s} ${arr[x]}`
+      }
+      let x =date.getDay() 
+      console.log(s);
+      // 
+      setInterval(function(){
+        document.querySelector('div').innerHTML = Timer()
+      },1000)
+
+      // 另一种写法
+      // let date = new Date()
+      // console.log(date.toLocaleString());
+      // document.querySelector('div').innerHTML = date.toLocaleString() //2023/4/9 14:14:12
+      // document.querySelector('div').innerHTML = date.toLocaleTimeString()  //14:13:55
+      // document.querySelector('div').innerHTML = date.toLocaleDateString() //2023/4/9
+      // document.querySelector('div').innerHTML = date.toTimeString() //14:15:41 GMT+0800 (中国标准时间)
+      // document.querySelector('div').innerHTML = date.toUTCString() //Sun, 09 Apr 2023 06:16:13 GMT
+
+      // document.querySelector('div').innerHTML = date.toLocaleString() //2023/4/9 14:14:12
+        // setInterval(function(){
+      // let date = new Date()
+      // document.querySelector('div').innerHTML = date.toLocaleString() //2023/4/9 14:14:12
+
+        // },1000)
+
+
+
+
+
+      
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,135 @@
+body {
+  min-width: 8.5333rem;
+  max-width: 20rem;
+  margin: 0 auto;
+  height: 32rem;
+  background-color: #F2F4F7;
+}
+a {
+  text-decoration: none;
+  color: #707070;
+}
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 37.5px !important;
+  }
+}
+header {
+  height: 2.1333rem;
+  font-size: 0.9333rem;
+  font-family: Microsoft YaHei;
+  color: #1C1C1C;
+  text-align: center;
+  line-height: 2.1333rem;
+  border-bottom: 1px solid #EAEAEA;
+  background-color: #fff;
+}
+.box {
+  padding-top: 1.1733rem;
+  padding-bottom: 1.1467rem;
+  background-color: #fff;
+}
+.box .list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.box .list a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
+}
+.box .list a img {
+  width: 3.7067rem;
+  height: 3.7067rem;
+}
+.box .list a span {
+  display: block;
+  font-size: 0.6667rem;
+}
+.box .list a:nth-child(-n+3) {
+  margin-bottom: 1.6533rem;
+}
+.box .box_banner {
+  width: 19.2533rem;
+  height: 4.0533rem;
+  margin: 1.6rem 0.2667rem 1.1467rem 0.48rem;
+}
+.main {
+  padding: 1.2rem 0.64rem 1.0133rem 0.5867rem;
+  margin-top: 0.2667rem;
+  background-color: #fff;
+}
+.main .top {
+  display: flex;
+  justify-content: space-between;
+  height: 0.7467rem;
+  line-height: 0.7467rem;
+  margin-bottom: 0.9067rem;
+}
+.main .top h4 {
+  font-size: 0.7467rem;
+  color: #333333;
+  font-weight: bold;
+  margin: 0;
+}
+.main .top h4::before {
+  content: '';
+  display: inline-block;
+  width: 1.0133rem;
+  height: 1.0133rem;
+  background-color: aqua;
+  vertical-align: bottom;
+  margin-right: 0.1333rem;
+  background: url(../icons/i2.png) no-repeat;
+  background-size: 1.0133rem 1.0133rem;
+}
+.main .top a {
+  font-size: 0.5867rem;
+  color: #999999;
+  text-align: center;
+}
+.main .Rotation .swiper {
+  width: 100%;
+  height: 100%;
+}
+.main .Rotation .swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.main .Rotation .swiper .swiper-slide a {
+  width: 9.0133rem;
+  height: 10.0267rem;
+  margin-bottom: 0.9067rem;
+}
+.main .Rotation .swiper .swiper-slide a img {
+  width: 100%;
+  height: 100%;
+}
+.main .Rotation .swiper .swiper-slide p {
+  width: 6.8rem;
+  font-size: 0.6667rem;
+  color: #333333;
+}
+.main .Rotation .swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

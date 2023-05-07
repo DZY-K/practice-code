@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      table {
+        width: 400px;
+        border: 1px solid #000;
+        border-collapse: collapse;
+        margin: 0 auto;
+      }
+
+      td,
+      th {
+        border: 1px solid #000;
+        text-align: center;
+      }
+
+      input {
+        width: 50px;
+      }
+
+      .search {
+        width: 600px;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="search">
+      按照价格查询: <input type="text" class="start"> - <input type="text" class="end"> <button
+        class="search-price">搜索</button> 按照商品名称查询: <input type="text" class="product"> <button
+        class="search-pro">查询</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>产品名称</th>
+          <th>价格</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+
+
+      <script>
+
+        // 利用新增数组方法操作数据
+        var data = [{
+          id: 1,
+          pname: '小米',
+          price: 3999
+        }, {
+          id: 2,
+          pname: 'oppo',
+          price: 999
+        }, {
+          id: 3,
+          pname: '荣耀',
+          price: 1299
+        }, {
+          id: 4,
+          pname: '华为',
+          price: 1999
+        },];
+        // 先获取数据，把数据渲染到页面中
+        // 1.把数据用tr放在tbody里面，获取tbody，用forEach遍历data里面的数据，用createElement创建tr,在tr里面用innerHTML添加td数据，把tr用appendChild放到tbody里面。
+        var tbody = document.querySelector('tbody')
+        var search_price = document.querySelector('.search-price')
+        var end = document.querySelector('.end')
+        var start = document.querySelector('.start')
+        var product = document.querySelector('.product')
+        var search_pro = document.querySelector('.search-pro')
+        setData(data)
+        // 封装渲染页面的方法（把数据传到页面）
+        function setData(mydata) {
+          //不能放在forEach里面不然遍历一遍清空一边，最后只生成一条数据
+          tbody.innerHTML = ''
+          mydata.forEach(function (value) {
+
+            // console.log(value);
+            var tr = document.createElement('tr')
+            tr.innerHTML = '<td>' + value.id + '</td><td>' + value.pname + '</td><td>' + value.price + '</td>'
+            tbody.appendChild(tr)
+          });
+        }
+        // 2.带点击按钮，根据商品价格筛选数组里的对象
+        // 3.把点击后的数据渲染到页面上
+        // 遍历最后如果有条件都需要return
+        search_price.addEventListener('click', function () {
+          var newData = data.filter(function (value) {
+            // console.log(value);
+            // start.value 添加数据的值
+            return value.price <= end.value && value.price >= start.value
+          })
+          setData(newData)
+        })
+        //  4.点击按钮查询上商品，用some查找唯一值,some返回值为布尔值，需要return true
+        search_pro.addEventListener('click', function () {
+          // 把匹配的值（用户填写的值）放进一个数组便于调用
+          var arr = []
+          data.some(function (value) {
+            if (value.pname === product.value) {
+              arr.push(value)
+              return true
+            }
+          })
+          setData(arr)
+        })
+
+
+      </script>
+  </body>
+
+</html>

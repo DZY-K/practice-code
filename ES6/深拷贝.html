@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var obj = {
+        id: 1,
+        uname: 'zs',
+        msg: {
+          age: 18
+        },
+        hobbey: ['乒乓球', '篮球']
+      }
+      // 递归
+      // var o = {}
+      // function deepCopy(newObj, oldObj) {
+        // for (let k in oldObj) {
+          // 数组一定要写在对象的前面，因为数组也属于对象
+          // if (obj[k] instanceof Array) {
+            // newObj[k] = []
+            // deepCopy(newObj[k], oldObj[k])
+          // } else if (obj[k] instanceof Object) {
+            // newObj[k] = {}
+            // deepCopy(newObj[k], oldObj[k])
+          // } else {
+            // newObj[k] = oldObj[k]
+          // }
+        // }
+      // }
+      // deepCopy(o, obj)
+      // console.log(o);
+      const o=JSON.parse(JSON.stringify(obj))
+      o.uname = 'ls'
+      o.hobbey[1] = '羽毛球'
+      o.msg.age = '21'
+      console.log(o);
+      console.log(obj);
+
+    </script>
+  </body>
+
+</html>

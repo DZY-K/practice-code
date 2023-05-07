@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      margin: 100px auto;
+    }
+    .box .round_dot{
+     
+      width: 8px;
+      height: 8px;
+      background-color: blue;
+      border-radius: 50%;
+    }
+    .box div[class^="circle"]{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 8px;
+      height: 8px;
+      box-shadow: 0 0 12px blue;
+      border-radius: 50%;
+      animation: identifier 1.6s  linear  infinite ;
+    }
+    .box div.circle1{
+      animation-delay: 0.4s;
+    }
+    .box div.circle2{
+      animation-delay: 0.8s;
+    }
+    @keyframes identifier {
+      0%{}
+      70%{
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+      }
+      100%{
+        width: 70px;
+        height: 70px;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="round_dot"></div>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+  </div>
+</body>
+</html>

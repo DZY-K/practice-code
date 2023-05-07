@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .box {
+        position: relative;
+        overflow: hidden;
+        width: 721px;
+        height: 455px;
+        margin: 100px auto;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      .box ul {
+        position: absolute;
+        width: 400%;
+      }
+
+      .box ul li {
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button>点击急急急急急急</button>
+    <div class="box">
+      <ul>
+        <li><img src="../img/focus1.png.png" alt=""></li>
+        <li><img src="../img/focus1.jpg" alt=""></li>
+        <li><img src="../img/focus2.jpg" alt=""></li>
+        <li><img src="../img/focus1.png.png" alt=""></li>
+      </ul>
+
+
+    </div>
+    <script src="../js高级/animate.js"></script>
+<script>
+  var box = document.querySelector('.box')
+  var ul = document.querySelector('ul')
+  var li = document.querySelector('li')
+  var btn =document.querySelector('button')
+  // ul.addEventListener('click', function () {
+    // for (let i = 0; i < ul.children.length; i++) {
+      // ul.children[i].setAttribute('index', i)
+    // }
+    // var index = li.getAttribute('index')
+    // animate(ul, -index * box.offsetWidth)
+  // })
+
+  var num=0
+btn.addEventListener('click',function(){
+  
+  // console.log(num);
+  if(num==ul.children.length-1){
+    num=0
+    ul.style.left=0
+
+  }
+  num++
+  
+  animate(ul, -num * box.offsetWidth)
+})
+var timer =setInterval(function(){
+  btn.click()
+},2000)
+</script>
+  </body>
+
+</html>

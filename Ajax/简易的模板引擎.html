@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./lib/list.js"></script>
+</head>
+<body>
+      <div class="box"></div>
+      <script type="text/html" id="list">
+        <div>姓名:{{name}}</div>
+        <div>性别:{{gender}}</div>
+        <div>年龄:{{age}}</div>
+        <div>地址:{{address}}</div>
+      </script>
+      <script>
+        var data={ name:'zs', gender:'男',age:18,address:'河南商丘'}
+        let add =template('list',data)
+        document.querySelector('.box').innerHTML=add
+      </script>
+</body>
+</html>

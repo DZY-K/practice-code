@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .ss {
+        width: 300px;
+        height: 200px;
+        margin: 100px auto;
+      }
+
+      p {
+        display: none;
+      }
+
+      div .sd {
+        display: block;
+
+      }
+
+      .cor {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ss">
+      <div class="aa">
+        <button class="cor"  data-id='0'> 1 </button>
+        <button data-id='1'> 2 </button>
+        <button data-id='2'> 3 </button>
+        <button data-id='3'> 4 </button>
+      </div>
+
+      <p class="sd">1阿斯顿飞过VS这个</p>
+      <p>2是的高富帅</p>
+      <p>3的发送多个</p>
+      <p>4估计很难搞定会让人</p>
+    </div>
+    <script>
+     
+      // var btns = div.querySelectorAll("button")
+      var aa =document.querySelector('.aa')
+      var p = document.querySelectorAll("p")
+
+      // for (var i = 0; i < btns.length; i++) {
+      // btns[i].setAttribute('index', i)
+      // btns[i].onclick = function () {
+      // for (var i = 0; i < btns.length; i++) {
+      // btns[i].className = '';
+      // }
+      // this.className = 'cor';
+      // var index = this.getAttribute('index') ;
+      // 
+      // for (var i = 0; i < p.length; i++) {
+      // p[i].style.display = 'none';
+      // }
+      // p[index].style.display = 'block';
+      // }
+      // }
+      aa.addEventListener('click', function (e) {
+        // console.log(e.target.dataset.id);
+        document.querySelector('.cor').classList.remove('cor')
+        e.target.classList.add('cor')
+        document.querySelector('.sd').classList.remove('sd')
+        p[e.target.dataset.id].classList.add('sd')
+      })
+
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      table {
+        width: 300px;
+        height: 200px;
+        margin: 100px auto;
+        border-collapse: collapse;
+      }
+
+      tr td,
+      th {
+        border: 1px #000 solid;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      
+        <tr>
+          <th>果然是</th>
+          <th><input type="checkbox" id="all"></th>
+        </tr>
+        <tbody id="dan">
+        <tr>
+          <td>暗示着可能房价和大家说</td>
+          <td><input type="checkbox" class="ck"></td>
+        </tr>
+        <tr>
+          <td>暗示着可能房价和大家说</td>
+          <td><input type="checkbox" class="ck"></td>
+        </tr>
+        <tr>
+          <td>暗示着可能房价和大家说</td>
+          <td><input type="checkbox" class="ck"></td>
+        </tr>
+        <tr>
+          <td>暗示着可能房价和大家说</td>
+          <td><input type="checkbox" class="ck"></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      // var trs = document.querySelectorAll("tr")
+      var all = document.querySelector("#all")
+      var dan = document.querySelector("#dan").querySelectorAll("input")
+      // for (var i = 0; i <= trs.length; i++) {
+      // trs[i].onmouseover = function () {
+      // this.style.backgroundColor = "red"
+      // }
+      // trs[i].onmouseout = function () {
+      // this.style.backgroundColor = ""
+      // }
+      // }
+
+        //  派他思想
+      // all.onclick = function () {
+        // for (var i = 0; i < dan.length; i++) {
+          // dan[i].checked = this.checked;
+        // }
+      // }
+      // for (var i = 0; i < dan.length; i++) {
+        // dan[i].onclick = function () {
+          // var flag = true;
+          // for (var i = 0; i < dan.length; i++) {
+            // if (!dan[i].checked) {
+              // flag = false;
+              // break;
+            // }
+          // }
+          // all.checked=flag
+        // }
+      // }
+          all.addEventListener('click',function(){
+            dan.forEach((item,i)=>{
+              item.checked=this.checked
+            })
+          })
+          dan.forEach((item)=>{
+            item.addEventListener('click',function(){
+              // document.querySelectorAll('.ck:checked')所有选中的复选框个数
+              all.checked = document.querySelectorAll('.ck:checked').length === dan.length
+            })
+          })
+
+    </script>
+  </body>
+
+</html>

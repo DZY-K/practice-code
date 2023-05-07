@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style >
+  span{
+    display: inline-block;
+    width: 100px;
+    height: 25px;
+    margin-left: 20px;
+    
+  }
+  .redss{
+    background-color: brown;
+  }
+  .ass{
+    background-color: green;
+  }
+  
+  
+</style>
+</head>
+<body>
+  <input type="text" name="" id="tes"><span class="as">用户输入</span>
+  <script>
+    var tes = document.querySelector('#tes')
+    var span =document.querySelector('span')
+    var res = /^\w{6,16}$/
+    tes.onblur=function(){
+      if(res.test(this.value)){
+        span.className='ass'
+        span.innerHTML='用户输入成功'
+      }else{
+        span.className='redss'
+        span.innerHTML='用户输入失败'
+      }
+
+    }
+  </script>
+</body>
+</html>

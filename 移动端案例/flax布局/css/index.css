@@ -1,0 +1,247 @@
+html{
+  height: 1200px;
+}
+
+body{
+  width: 100%;
+  min-width: 320px;
+  max-width: 540px;
+  margin: 0 auto;
+  font: normal 14px/1.5 Tahoma,"Lucida Grande" , verdana, "Microsoft Yahei",sTxihei, hei;
+  color:  #000;
+  background: #f2f2f2;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent ;
+  height: 1200px;
+}
+div{
+  box-sizing: border-box;
+}
+header{
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 48px;
+  min-width: 320px;
+  max-width: 540px;
+  border-bottom: 1px solid #ccc;
+}
+.seach {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  
+}
+.seach input{
+ 
+  width: 476px;
+  height: 32px;
+  margin-top: 7px;
+  margin-left: 7px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  padding-left: 30px;
+  line-height: 32px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.seach::before{
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 15px;
+  height: 15px;
+  background: url("../images/sprite.png") no-repeat -59px -278px;
+  background-size: 104px auto;
+}
+
+a{
+  text-decoration: none;
+}
+header .mine{
+  width: 44px;
+  height: 44px;
+  font-size: 12px ;
+  color: #2eaae0;
+  text-align: center;
+}
+header .mine a::before{
+  content: "";
+  display: block;
+  width: 23px;
+  height: 23px; 
+  background: url("../images/sprite.png") no-repeat -56px -186px;
+  background-size: 100px auto;
+  margin: 3px auto 1px 10px;
+}
+
+.focus{
+  position: relative;
+  overflow: hidden;
+  padding-top: 44px;
+}
+.focus img{
+  width: 100%;
+}
+.focus ul {
+  overflow: hidden;
+  width: 500%;
+  padding: 0;
+  margin: 0;
+  margin-left: -100%;
+}
+.focus ul li{
+  width: 20%;
+  float: left;
+  list-style: none;
+  transition: all 0.3s;
+}
+.focus span ol{
+  position: absolute;
+  bottom: 3px;
+  right: 6px;
+  margin: 0;
+  padding: 0;
+}
+.focus span ol li{
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 2px;
+  list-style: none;
+  
+}
+.focus span ol .cur{
+  width: 10px;
+  
+}
+.nav{
+  overflow: hidden;
+  display: flex;
+  height: 64px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin: 3px 4px;
+
+}
+.nav div{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  align-items: center;
+  /* text-align: center; */
+}
+.nav div:nth-child(1) .pic{
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(../images/localnav_bg.png) no-repeat 0 0;
+  background-size: 32px auto;
+}
+.nav div:nth-child(2) .pic{
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(../images/localnav_bg.png) no-repeat 0 -32px;
+  background-size: 32px auto;
+}
+.nav div:nth-child(3) .pic{
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(../images/localnav_bg.png) no-repeat 0 -64px;
+  background-size: 32px auto;
+}
+.nav div:nth-child(4) .pic{
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(../images/localnav_bg.png) no-repeat 0 -96px;
+  background-size: 32px auto;
+}
+.nav div:nth-child(5) .pic{
+  display: block; 
+  width: 32px;
+  height: 32px;
+  background: url(../images/localnav_bg.png) no-repeat 0 -128px;
+  background-size: 32px auto;
+}
+/* .nav div .pic{ */
+  /* margin-left: 34px; */
+  /* margin-top: 7px; */
+/* } */
+.box{
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 0 4px 3px;
+ 
+}
+.box div[class^=box]{
+  height: 88px;
+  
+}
+.box .box_m{
+  margin: 3px 0;
+}
+.box .box_t,.box_m,.box_b{
+  display: flex;
+ 
+}
+.box .box_t div,.box_m div,.box_b div{
+  flex: 1;
+
+}
+.box .box_t .top_m,.box_m .top_m,.box_b .top_m{
+  display: flex;
+  flex-direction: column;
+  margin: 0 2px;
+  text-align: center;
+line-height: 44px;
+}
+.box .box_t .top_m .middle1,.box_m .top_m .middle1,.box_b .top_m .middle1{
+  margin-bottom: 2px;
+}
+.box .box_t .top_m div,.box_m .top_m div,.box_b .top_m div{
+  flex: 1;
+ 
+}
+.box .box_t .top_r,.box_m .top_r,.box_b .top_r{
+  display: flex;
+  flex-direction: column;
+  margin: 0 2px;
+  text-align: center;
+line-height: 44px;
+}
+.box .box_t .top_r .right1,.box_m .top_r .right1,.box_b .top_r .right1{
+  margin-bottom: 2px;
+  
+  
+}
+.box .box_t .top_r div,.box_m .top_r div,.box_b .top_r div{
+  flex: 1;
+ 
+}
+.box .box_t .top_l,.box_m .top_l,.box_b .top_l{
+  text-align: center;
+  line-height: 44px;
+  border: 0;
+  background: url(../images/hotel.png) no-repeat bottom center;
+  background-size: 121px auto;
+
+}
+.box .box_t{
+  background: -webkit-linear-gradient(left,#FA5A55,#FA994D);
+}
+.box  .box_m{
+  background: -webkit-linear-gradient(left,#4B90ED,#53BCED);
+}
+.box  .box_b{
+  background: -webkit-linear-gradient(left,#34C2A9,#6CD559);
+}

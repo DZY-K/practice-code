@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no,maximum-scale=1.0 ,minimum-scale=1.0" >
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+</head>
+<body>
+  <header>黑马面面</header>
+  <div class="box">
+    <div class="list">
+      <a href="#">
+        <img src="./icons/icon1.png" alt="">
+        <span>HR面试</span>
+      </a>
+      <a href="#">
+        <img src="./icons/icon2.png" alt="">
+        <span>HR面试</span>
+      </a>
+      <a href="#">
+        <img src="./icons/icon3.png" alt="">
+        <span>HR面试</span>
+      </a>
+      <a href="#">
+        <img src="./icons/icon4.png" alt="">
+        <span>HR面试</span>
+      </a>
+      <a href="#">
+        <img src="./icons/icon5.png" alt="">
+        <span>HR面试</span>
+      </a>
+      <a href="#">
+        <img src="./icons/icon6.png" alt="">
+        <span>HR面试</span>
+      </a>
+    </div>
+    <div class="box_banner"><img src="./images/go.png" alt=""></div>
+  </div>
+  <div class="main">
+    <div class="top">
+      <h4>就业指导</h4>
+      <a href="#">更多>></a>
+    </div>
+    <div class="Rotation">
+       <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="#"><img src="./images/pic.png" alt=""></a>
+          <p>老师教你应对面试技巧</p>
+        </div>
+        <div class="swiper-slide">
+          <a href="#"><img src="./images/2.jpg" 
+        alt=""></a>
+          <p>老师教你应对面试技巧</p>
+        </div>
+        <div class="swiper-slide">
+          <a href="#"><img src="./images/3.jpg" 
+        alt=""></a>
+          <p>老师教你应对面试技巧</p>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    </div>
+  </div>
+  <script src="./js/flexible.js"></script>
+  <script src="./js/swiper-bundle.min.js"></script>
+   <!-- Initialize Swiper -->
+   <script>
+    (function(){
+      var swiper = new Swiper(".mySwiper", {
+   navigation: {
+     nextEl: ".swiper-button-next",
+     prevEl: ".swiper-button-prev",
+   },
+ });
+    })()
+  </script>
+</body>
+</html>

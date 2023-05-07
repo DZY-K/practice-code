@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.js"></script>
+</head>
+<body>
+  <button class="btn1">GET</button>
+  <button class="btn2">POST</button>
+  <script>
+    $(function(){
+      $(".btn1").on('click',function(){
+        $.ajax({
+          type:'GET',
+          url:'http://127.0.0.1/api/get',
+          data:{name:'zs',danger:'男'},
+          success:function(res){
+            console.log(res);
+          }
+
+        })
+      })
+      $(".btn2").on('click',function(){
+        $.ajax({
+          type:'POST',
+          url:'http://127.0.0.1/api/post',
+          data:{book:'刑法',auther:'张三'},
+          success:function(res){
+            console.log(res);
+          }
+
+        })
+      })
+    })
+  </script>
+ 
+</body>
+</html>

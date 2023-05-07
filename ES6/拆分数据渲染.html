@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  
+  <script>
+    const stt='大幅拉升,发觉覅欧吉安'
+    // console.log(stt.split(',')) // ['大幅拉升', '发觉覅欧吉安']
+    // const str=stt.split(',').map(item=>{
+      // return `<span>【啊杀】${item}</span> <br>`
+    // }).join('')
+    // console.log(str);
+    // document.querySelector('div').innerHTML=str
+
+    // 简写
+    document.querySelector('div').innerHTML=stt.split(',').map(item=>`<span>【啊杀】${item}</span> <br>`).join('')
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button>点开科技</button>
+    <div></div>
+    <script>
+      var btn = document.querySelector('button')
+      var div = document.querySelector('div')
+      var timer = 3
+      timers()
+      btn.addEventListener('click', function () {
+        clearInterval(timers)
+      })
+      
+      function timers() {
+        if (timer == 0) {
+          location.href = 'http://www.jd.com'
+        } else {
+          div.innerHTML = '页面将在' + timer + '跳转'
+          timer--
+        }
+      }
+      var timers = setInterval(timers, 1000)
+    </script>
+  </body>
+
+</html>
