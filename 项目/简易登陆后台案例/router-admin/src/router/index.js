@@ -1,27 +1,46 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import MyLogin from '@/components/MyLogin.vue'
+import MyHome from '@/components/MyHome.vue'
+import User from '@/components/menus/MyUsers.vue'
+import power from '@/components/menus/MySettings.vue'
+import goods from '@/components/menus/MyGoods.vue'
+import orler from '@/components/menus/MyOrders.vue'
+import system from '@/components/menus/MyRights.vue'
+import userDetail from '@/components/UserDailt.vue'
 
 Vue.use(VueRouter)
-
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
-
 const router = new VueRouter({
-  routes
+  routes: [
+    { path: '/', redirect: '/login' },
+    { path: '/login', component: MyLogin },
+    {
+      path: '/home',
+      redirect: '/home/user',
+      component: MyHome,
+      children: [
+        { path: 'user', component: User },
+        { path: 'power', component: power },
+        { path: 'goods', component: goods },
+        { path: 'orler', component: orler },
+        { path: 'system', component: system },
+        { path: 'userDetail/:id', component: userDetail, props: true }
+
+      ]
+    }
+  ]
+})
+router.beforeEach(function (to, from, next) {
+  if (to.path === '/home/user') {
+    const token = localStorage.getItem('token')
+    if (token) {
+      next()
+    } else {
+      next('/login')
+    }
+  } else {
+    next()
+  }
 })
 
 export default router
